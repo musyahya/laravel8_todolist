@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Todolist extends Model
+{
+    use HasFactory;
+
+    protected $table = 'todolist';
+    protected $fillable = ['judul', 'deskripsi'];
+
+    public function step()
+    {
+        return $this->hasMany(Step::class);
+    }
+}
