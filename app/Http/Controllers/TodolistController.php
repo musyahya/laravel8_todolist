@@ -14,7 +14,7 @@ class TodolistController extends Controller
      */
     public function index()
     {
-        // 
+        return Todolist::all();
     }
 
     /**
