@@ -86,6 +86,6 @@ class TodolistController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Todolist::whereId($id)->delete();
     }
 }
