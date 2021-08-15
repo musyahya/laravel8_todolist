@@ -49,7 +49,7 @@ class TodolistController extends Controller
      */
     public function show($id)
     {
-        //
+        return Todolist::find($id);
     }
 
     /**
