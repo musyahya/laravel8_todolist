@@ -14,7 +14,7 @@ class TodolistController extends Controller
      */
     public function index()
     {
-        return Todolist::all();
+        return Todolist::latest()->get();
     }
 
     /**
@@ -35,7 +35,10 @@ class TodolistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Todolist::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+        ]);
     }
 
     /**
@@ -57,7 +60,7 @@ class TodolistController extends Controller
      */
     public function edit($id)
     {
-        //
+        // 
     }
 
     /**
@@ -69,7 +72,10 @@ class TodolistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Todolist::whereId($id)->update([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi
+        ]);
     }
 
     /**
