@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StepController;
 use App\Http\Controllers\TodolistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/todolist', TodolistController::class);
+Route::resource('/step', StepController::class);
+Route::get('/step/{id}/getByTodolistId', [StepController::class, 'getByTodolistId']);
