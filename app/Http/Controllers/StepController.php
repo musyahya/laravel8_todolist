@@ -14,7 +14,7 @@ class StepController extends Controller
      */
     public function getByTodolistId($id)
     {
-        return Step::where('todolist_id', $id)->get();
+        return Step::where('todolist_id', $id)->latest()->get();
     }
 
     public function index()
@@ -29,7 +29,7 @@ class StepController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -40,7 +40,11 @@ class StepController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Step::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'todolist_id' => $request->todolist_id,
+        ]);
     }
 
     /**
