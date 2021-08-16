@@ -92,6 +92,6 @@ class StepController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Step::whereId($id)->delete();
     }
 }
