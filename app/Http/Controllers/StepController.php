@@ -55,7 +55,7 @@ class StepController extends Controller
      */
     public function show($id)
     {
-        //
+        return Step::find($id);
     }
 
     /**
@@ -78,7 +78,10 @@ class StepController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Step::whereId($id)->update([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+        ]);
     }
 
     /**
