@@ -14,7 +14,7 @@ class StepController extends Controller
      */
     public function getByTodolistId($id)
     {
-        return Step::where('todolist_id', $id)->latest()->paginate(2);
+        return Step::where('todolist_id', $id)->latest()->paginate(3);
     }
 
     public function index()
