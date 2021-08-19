@@ -94,4 +94,9 @@ class StepController extends Controller
     {
         Step::whereId($id)->delete();
     }
+
+    public function search($id, $search)
+    {
+        return Step::where('todolist_id', $id)->where('judul', 'like', '%'. $search .'%')->latest()->paginate(3);
+    }
 }

@@ -25,3 +25,4 @@ Route::get('/todolist/{search}/search',[ TodolistController::class, 'search']);
 
 Route::resource('/step', StepController::class);
 Route::get('/step/{id}/getByTodolistId', [StepController::class, 'getByTodolistId']);
+Route::get('/step/{id}/{search}', [StepController::class, 'search']);
