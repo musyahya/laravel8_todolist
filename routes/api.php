@@ -21,5 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/todolist', TodolistController::class);
+Route::get('/todolist/{search}/search',[ TodolistController::class, 'search']);
+
 Route::resource('/step', StepController::class);
 Route::get('/step/{id}/getByTodolistId', [StepController::class, 'getByTodolistId']);

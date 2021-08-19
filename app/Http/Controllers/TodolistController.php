@@ -88,4 +88,9 @@ class TodolistController extends Controller
     {
         Todolist::whereId($id)->delete();
     }
+
+    public function search($search)
+    {
+        return Todolist::where('judul', 'like', '%'. $search .'%')->latest()->paginate(3);
+    }
 }
